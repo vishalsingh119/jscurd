@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>date range picker</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+	<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+ 
+<!-- Include Date Range Picker -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+    
+  </head>
+
+  <body>
+    
+      
+	<br/><br/>
+	<input type="text" name="daterange" id="editDate" value="" />
+	<br/>
+	<input id="show_date">
+    <script>
+	$('#editDate').daterangepicker({
+   autoUpdateInput: true,
+	"locale": {
+        "format": "MMM DD YYYY"
+        },
+	"dateLimit": {
+        "days": 7
+    }
+},function(start, end, label) {
+ var date1 = start._d;
+ var date2 = end._d;
+ var timeDiff = Math.abs(date2 - date1);
+ var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
+ $('#show_date').val(diffDays)
+});
+
+
+
+    
+    </script>
+    
+  </body>
+</html>
