@@ -1,4 +1,12 @@
-var array_val = new Array();
+	
+		
+	// $('#add_event').on('click',function(){
+		// $('.main_div').show();
+	// });
+	// $('#hide_event').on('click',function(){
+		// $('.main_div').hide();
+	// });
+	var array_val = new Array();
 	
 	$("#save_submit").on('click',function(){
 		
@@ -70,7 +78,7 @@ var array_val = new Array();
 					$('#event_contact').val(value.event_contact);
 					$('#event_email').val(value.event_email);
 					$('#event_phone').val(value.event_phone);
-					$('#update_submit').attr('edit_id',eventname_id+1);
+					$('#update_submit').attr('update_event',eventname_id+1);
 				}
 			});
 			$('#update_submit').show();
@@ -84,13 +92,14 @@ var array_val = new Array();
 		
 		//onupdate update the value in relevent event
 		$('#update_submit').on('click', function () {
-			eventname_id = $(this).attr('edit_id');
+			eventname_id = $(this).attr('update_event');
 			
-			var event_ven =$('#event_name').val();
-			var event_des =$('#event_des').val();
-			var event_contact =$('#event_contact').val();
-			var event_email =$('#event_email').val();
-			var event_phone =$('#event_phone').val();
+			var event_ven = $('#event_name').val();
+			var event_des = $('#event_des').val();
+			var event_contact = $('#event_contact').val();
+			var event_email = $('#event_email').val();
+			var event_phone = $('#event_phone').val();
+
 		
 			$('#save_event_name'+eventname_id).val(event_ven);
 			$('#save_event_des'+eventname_id).val(event_des);
@@ -126,3 +135,7 @@ var array_val = new Array();
 		});//end 
 		
 	});
+	
+	
+	
+		 
